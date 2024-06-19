@@ -132,7 +132,7 @@ const LabPage = (params:any) => {
                             <Avatar
                                 src={'/images/garuda.png'} variant="square"
                                 sx={{
-                                    mt:'-50px',
+                                    mt:'-60px',
                                     height:80,
                                     width: 80,
                                     position:'absolute'
@@ -178,19 +178,22 @@ const LabPage = (params:any) => {
                     </Grid>
                 <CardContent>
                         <Grid container spacing={3} sx={{ml:0, mr:4}}>
-                        <List dense={dense}>
+                            <List dense={dense}>
                             {labs.blogs.map((row : any, index:any) => (
-                                <ListItem key={index}>
+                                <ListItem key={index} >
                                     <Grid item xs={4}>
                                         <Typography color="textPrimary" fontSize={20} fontWeight={500} className={sarabunPSK.className}>
-                                            {i++}.{row['patientName']} อายุ {row['AGE']} ปี HN {row['pid']} 
+                                            {i++}.{row['patientName']} อายุ {row['AGE']} ปี 
                                         </Typography>
                                         <Typography color="textPrimary" fontSize={20} fontWeight={500} className={sarabunPSK.className}>
-                                            {row.idcard} สิทธ์ {row.rightname} 
+                                            HN {row['pid']} cid {row.idcard}
+                                        </Typography>
+                                        <Typography color="textPrimary" fontSize={20} fontWeight={500} className={sarabunPSK.className}>
+                                            สิทธ์ {row.rightname} 
                                         </Typography>
                                     </Grid>
-                                    <Grid item xs={8} sx={{verticalAlign:'top'}} color="textPrimary" fontSize={12}>
-                                        <Typography color="textPrimary" fontSize={20} fontWeight={500} className={sarabunPSK.className}>
+                                    <Grid item xs={8} color="textPrimary" fontSize={12}>
+                                        <Typography color="textPrimary" fontSize={20} fontWeight={500} className={sarabunPSK.className} sx={{ position:'relative'}}>
                                             <Typography fontWeight={600} sx={{float:'left', mr:2}}>{row['labTypeName']}</Typography > [_] {row['labItemNames']} อืนๆ..........
                                         </Typography>
                                     </Grid>
@@ -199,8 +202,8 @@ const LabPage = (params:any) => {
                             </List>
                         </Grid>
                         <Grid item xs={12} lg={12} >
-                            <Grid item lg={12}>
-                                <Typography color="textPrimary" fontSize={20} fontWeight={500} className={sarabunPSK.className} sx={{textIndent:70}}>
+                            <Grid item lg={12} >
+                                <Typography color="textPrimary" fontSize={20} fontWeight={500} className={sarabunPSK.className} sx={{textIndent:70}} >
                                     เมื่อดำเนินการเสร็จเรียบร้อยแล้วทาง{org?.orgName}จะมาขอรับผลการตรวจในวันถัดไปจึงเรียนมาเพื่อโปรดพิจารณาอนุเคราะห์
                                 </Typography>
                             </Grid>
@@ -228,6 +231,7 @@ const LabPage = (params:any) => {
                 <Grid container spacing={3} sx={{ position: 'relative', clear: 'both', left: 0, bottom: 0,width: '100%', }}>
                     <Grid item lg={12} >
                         <ReactToPrint
+                            pageStyle={'@media print { body { -webkit-print-color-adjust: exact; } @page { size: A4; margin-left: 2.5cm; margin-top:1.5cm; margin-right:1.5cm; !important }}'}
                             trigger={() => <Button startIcon={<IconPrinter/>} variant='outlined' color="primary" sx={{float:'right'}}>พิมพ์ปะหน้า</Button>}
                             content={() => componentRef.current}
                         />

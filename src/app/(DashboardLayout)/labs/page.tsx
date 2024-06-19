@@ -80,7 +80,7 @@ const LabPage = (params:any) => {
       };
 
     const fetchLabs = async () => {
-        setIsLoading(true)
+        // setIsLoading(true)
 
         let paramsDate = dayjs(date).format('YYYY-MM-DD')
         let uri = `/api/labs/date/${paramsDate}`

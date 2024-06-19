@@ -8,7 +8,7 @@ export async function GET( request, {params} ) {
         try {
             const db = await pool.getConnection()
             const query = `SELECT  CONCAT(prenamelong, p.fname,' ',p.lname) AS patientName, TIMESTAMPDIFF(YEAR, birth,?) AS AGE, CONCAT(hnomoi, ' ม.', mumoi, ' ต.',subdistname, ' อ.', distname, ' จ.', provname,' ', postcodemoi) AS ADDRESS,
-            li.*, GROUP_CONCAT(labItemName ORDER BY labItemName SEPARATOR ', [_] ') AS labItemNames, labTypeName, p.pid, p.idcard, rightname, sex, v.visitno
+            li.*, GROUP_CONCAT(DISTINCT labItemName ORDER BY labItemName SEPARATOR ', [_] ') AS labItemNames, labTypeName, p.pid, p.idcard, rightname, sex, v.visitno
                         FROM visitlabchcyhembmsse l
                         LEFT JOIN visit v ON l.visitno = v.visitno
                         LEFT JOIN tbl_lab_type lt ON lt.labTypeId = v.labTypeId
