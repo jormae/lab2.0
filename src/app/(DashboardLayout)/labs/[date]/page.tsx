@@ -55,7 +55,7 @@ const LabPage = (params:any) => {
         setIsLoading(true)
         let paramsDate = dayjs(date).format('YYYY-MM-DD')
         console.log('paramsDate = '+paramsDate)
-        let uri = `/api/labs/date/${paramsDate}`
+        let uri = `${process.env.NEXT_PUBLIC_API_URL}/api/labs/date/${paramsDate}`
         console.log(uri)
         try {
           const { data } = await axios.get(uri)

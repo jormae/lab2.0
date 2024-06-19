@@ -37,7 +37,8 @@ const Login2 = () => {
   const onSubmit = (data: any) => {
     console.log(data)
     setLoading(true)
-    let uri = `/api/users`
+    let uri = `${process.env.NEXT_PUBLIC_API_URL}/api/users`
+    console.log(uri)
     fetch(uri, {
       method: 'POST',
       headers: {

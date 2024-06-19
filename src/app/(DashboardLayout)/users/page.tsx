@@ -99,7 +99,7 @@ const UserPage = (params:any) => {
 
     const fetchUsers = async () => {
         setIsLoading(true)
-        let uri = `/api/users`
+        let uri = `${process.env.NEXT_PUBLIC_API_URL}/api/users`
         try {
           const { data } = await axios.get(uri)
           setUsers({blogs:data})
@@ -122,7 +122,7 @@ const UserPage = (params:any) => {
         else{
             setError(false)
 
-            let uri = `/api/users`
+            let uri = `${process.env.NEXT_PUBLIC_API_URL}/api/users`
             console.log(uri)
             
             fetch(uri, {

@@ -47,7 +47,7 @@ const LabPage = (params:any) => {
 
     const fetchLabs = async () => {
         setIsLoading(true)
-        let uri = `/api/labs/visit-no/${visitno}`
+        let uri = `${process.env.NEXT_PUBLIC_API_URL}/api/labs/visit-no/${visitno}`
         try {
           const { data } = await axios.get(uri)
           setLabs({blogs:data})

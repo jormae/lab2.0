@@ -53,7 +53,7 @@ const UserPage = (params:any) => {
         formState: { errors },
       } = useForm({
         defaultValues:  async () => {
-            let uri = `/api/org`
+            let uri = `${process.env.NEXT_PUBLIC_API_URL}/api/org`
           try {
             const data = await axios
               .get(uri, {
@@ -78,7 +78,7 @@ const UserPage = (params:any) => {
     const onSubmit = (data:any) => {
         setLoading(true)
 
-            let uri = `/api/org`
+            let uri = `${process.env.NEXT_PUBLIC_API_URL}/api/org`
             fetch(uri, {
                 method: 'PUT',
                 headers: {

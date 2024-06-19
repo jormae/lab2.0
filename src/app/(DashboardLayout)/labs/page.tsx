@@ -83,7 +83,8 @@ const LabPage = (params:any) => {
         // setIsLoading(true)
 
         let paramsDate = dayjs(date).format('YYYY-MM-DD')
-        let uri = `/api/labs/date/${paramsDate}`
+        let uri = `${process.env.NEXT_PUBLIC_API_URL}/api/labs/date/${paramsDate}`
+        console.log(uri)
         try {
           const { data } = await axios.get(uri)
           setLabs({blogs:data})
@@ -93,7 +94,7 @@ const LabPage = (params:any) => {
     }
 
     const fetchLabTypes = async (sex:any) => {
-        let uri = `/api/lab-types/${sex}`
+        let uri = `${process.env.NEXT_PUBLIC_API_URL}/api/lab-types/${sex}`
         try {
           const { data } = await axios.get(uri)
           setLabTypes({ blogs: data })
@@ -111,7 +112,7 @@ const LabPage = (params:any) => {
             setLoading(false)
         }
         else{
-            let uri = `/api/labs/visit-no/${selectedVisitNo}`
+            let uri = `${process.env.NEXT_PUBLIC_API_URL}/api/labs/visit-no/${selectedVisitNo}`
             fetch(uri, {
                 method: 'PUT',
                 headers: {

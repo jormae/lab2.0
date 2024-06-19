@@ -53,7 +53,8 @@ const LabPage = (params:any) => {
   
     const fetchLabs = async () => {
         setIsLoading(true)
-        let uri = `/api/labs/date/${date}`
+        let uri = `${process.env.NEXT_PUBLIC_API_URL}/api/labs/date/${date}`
+        console.log(uri)
         try {
           const { data } = await axios.get(uri)
           setLabs({blogs:data})
@@ -64,7 +65,7 @@ const LabPage = (params:any) => {
     }
 
     const fetchOrg = async () => {
-    let uri = `/api/org`
+    let uri = `${process.env.NEXT_PUBLIC_API_URL}/api/org`
         try {
             const { data } = await axios.get(uri)
             setOrg(data[0])
@@ -74,7 +75,7 @@ const LabPage = (params:any) => {
     }
 
     const fetchUserInfo = async () => {
-        let uri = `/api/users/${username}`
+        let uri = `${process.env.NEXT_PUBLIC_API_URL}/api/users/${username}`
             try {
                 const { data } = await axios.get(uri)
                 setUserInfo(data[0])
