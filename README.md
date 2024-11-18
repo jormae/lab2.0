@@ -88,3 +88,13 @@ INSERT INTO `tbl_lab_type` VALUES (3, 'ANC LAB 1', '2');
 INSERT INTO `tbl_lab_type` VALUES (4, 'ANC LAB 2', '2');
 INSERT INTO `tbl_lab_type` VALUES (5, 'ANC สามี', '1');
 
+CREATE TABLE `jhcisdb`.`Untitled`  (
+  `orgId` int(2) NOT NULL AUTO_INCREMENT,
+  `orgName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `orgShortName` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `orgAddress` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
+  `orgDocNo` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`orgId`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+
