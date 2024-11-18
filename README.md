@@ -100,3 +100,5 @@ CREATE TABLE `jhcisdb`.`tbl_org`  (
 
 INSERT INTO `tbl_org` VALUES (1, 'โรงพยาบาลส่งเสริมสุขภาพตำบลปะลุกาสาเมาะ', 'รพ.สต.ปะลุกาสาเมาะ', 'อ.บาเจาะ จ.นราธิวาส 96170', 'นธ 51006.0106/');
 
+insert user field such email, telephone
+
