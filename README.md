@@ -97,8 +97,13 @@ CREATE TABLE `jhcisdb`.`tbl_org`  (
   PRIMARY KEY (`orgId`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
-
 INSERT INTO `tbl_org` VALUES (1, 'โรงพยาบาลส่งเสริมสุขภาพตำบลปะลุกาสาเมาะ', 'รพ.สต.ปะลุกาสาเมาะ', 'อ.บาเจาะ จ.นราธิวาส 96170', 'นธ 51006.0106/');
 
 insert user field such email, telephone
 
+=============================================
+BUILD DOCKER IMAGE
+1-modify db info into db.js file
+2.docker build -t lab:1.0.0 .
+3.docker run -d -p 3000:3000 --name lab lab:1.0.0
+4.docker update --restart=always lab
