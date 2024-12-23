@@ -79,8 +79,11 @@ insert database tbl_org
 ```bash
 INSERT INTO `tbl_org` VALUES (1, 'โรงพยาบาลส่งเสริมสุขภาพตำบลปะลุกาสาเมาะ', 'รพ.สต.ปะลุกาสาเมาะ', 'อ.บาเจาะ จ.นราธิวาส 96170', 'นธ 51006.0106/');
 ```
+add column labTypeId in table visit
+```bash
+ALTER TABLE jhcisdb.visit ADD labTypeId INT(2) NULL;
 insert user field such email, telephone
-
+```
 =============================================
 BUILD DOCKER IMAGE
 1. modify db info into db.js file
