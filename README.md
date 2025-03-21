@@ -74,7 +74,12 @@ CREATE TABLE `jhcisdb`.`tbl_org`  (
   PRIMARY KEY (`orgId`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 ```
-
+alter table user
+```bash
+ALTER TABLE jhcis.user
+ADD telephone varchar(10) NULL,
+ADD email varchar(100) NULL,
+```
 insert database tbl_org
 ```bash
 INSERT INTO `tbl_org` VALUES (1, 'โรงพยาบาลส่งเสริมสุขภาพตำบลปะลุกาสาเมาะ', 'รพ.สต.ปะลุกาสาเมาะ', 'อ.บาเจาะ จ.นราธิวาส 96170', 'นธ 51006.0106/');
