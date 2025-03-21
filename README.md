@@ -79,6 +79,7 @@ alter table user
 ALTER TABLE jhcis.user
 ADD telephone varchar(10) NULL,
 ADD email varchar(100) NULL,
+ADD orgId INT(1) DEFAULT 1 NULL,
 ```
 insert database tbl_org
 ```bash
