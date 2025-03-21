@@ -167,7 +167,7 @@ const UserPage = (params: any) => {
     } else {
       setError(false);
 
-      let uri = `/api/users`;
+      let uri = `/api/users/${username}`;
       console.log(uri);
 
       fetch(uri, {
