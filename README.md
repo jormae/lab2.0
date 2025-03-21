@@ -91,6 +91,14 @@ BUILD DOCKER IMAGE
 ```bash
 docker build -t lab:1.0.0 .
 ```
+* if build failed the run
+```bash
+npm install --global yarn
+```
+** to install yarn run command in cmd
+```bash
+docker build -t lab:1.0.0 .
+```
 3.run image
 ```bash
 docker run -d -p 3000:3000 --name lab lab:1.0.0
