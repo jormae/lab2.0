@@ -99,10 +99,35 @@ npm install --global yarn
 ```bash
 docker build -t lab:1.0.0 .
 ```
-3.run image
+3.run image using docker desktop 
+3.1 set container name
 ```bash
-docker run -d -p 3000:3000 --name lab lab:1.0.0
+lab2.0
 ```
+3.2 set host port number 
+```bash
+3000
+```
+3.3 set environment variables
+```bash
+NEXT_PUBLIC_API_URL
+```
+```bash
+NEXT_HOST_NAME
+```
+```bash
+NEXT_DB_USER
+```
+```bash
+NEXT_DB_PASSWORD
+```
+```bash
+NEXT_DB_NAME
+```
+```bash
+NEXT_DB_PORT
+```
+
 4.update auto restart container
 ```bash
 docker update --restart=always lab
